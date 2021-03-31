@@ -4,7 +4,7 @@
 31.03.2011
 
 ### Project Title
-Replace the Project Title
+Gitting Bikeshare Project
 
 ### Description
 Describe what your project is about and what it does
