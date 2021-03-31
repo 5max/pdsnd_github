@@ -17,4 +17,4 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-Did everything myself, don't need help, bitchez.
+Did everything myself, don't need help
