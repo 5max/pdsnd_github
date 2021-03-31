@@ -7,7 +7,9 @@
 Gitting Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+We have data from a bikesharing company for 3 different cities.
+The user can see statistical data for a filtered dataset.
+He can choose which filters to set, e.g. which city, month and day of the week he wants to see statistical data for.
 
 ### Files used
 Include the files used
