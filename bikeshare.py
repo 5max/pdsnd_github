@@ -23,17 +23,20 @@ def get_filters():
                 "big apple":"new york city","new york":"new york city","newyork":"new york city"}
     city = input("Tell me the name of the city you want to see data for, chicago or new york city or washington?\n").lower().strip()
 
+    # get city input
     while city not in citydict:
         city = input("You misspelled the city, try another synonym for the city chicago or new york city or washington.\n").lower().strip()
 
     if city in citydict:
         city = citydict[city]
 
+
     # Determine if the user wants to filter at all
     filter = input("Would you like to filter the data by month or day or both or not at all? Type month or day or both or all or m or d or b or a.\n").lower().strip()
 
     while filter not in ["month","day","both","all","m","d","b","a"]:
         filter = input("Just type month or day or both or all.\n").lower().strip()
+
 
     # get user input for month (all, january, february, ... , june)
     def monthly():
@@ -48,6 +51,7 @@ def get_filters():
             month = monthdict[month]
         return month
 
+
     # get user input for day of week (all, monday, tuesday, ... sunday)
     def daily():
         daydict = {"monday":0,"mon":0,"0":0,"tuesday":1,"tue":1,"1":1,"wednesday":2,"wed":2,"2":2,"thursday":3,"thu":3,"3":3,"friday":4,"fri":4,"4":4,"saturday":5,"sat":5,"5":5,"sunday":6,"sun":6,"6":6}
@@ -59,6 +63,7 @@ def get_filters():
         if day in daydict:
             day = daydict[day]
         return day
+
 
     # set the month and day variables depending on what was entered in filter
     if filter == "day" or filter == "d":
@@ -79,6 +84,7 @@ def get_filters():
         month = "all"
         day = "all"
 
+
     # just printing out the filters which the user chose
     to_month_name = {1 : "January", 2 : "February", 3 : "March", 4 : "April", 5 : "May", 6 : "June", "all" : "all"}
     to_day_name = {0 : "Monday", 1 : "Tuesday", 2 : "Wednesday", 3 : "Thursday", 4 : "Friday", 5 : "Saturday", 6 : "Sunday", "all" : "all"}
@@ -86,7 +92,9 @@ def get_filters():
     print("\nYour settings are: ", "\nCity: ", city.title(), "\nMonth: ", to_month_name[month], "\nDay: ", to_day_name[day])
     print('-'*80)
     # month from 1 - 6   and   day from 0 - 6
+
     return city, month, day
+
 
 def load_data(city, month, day):
     """
@@ -203,6 +211,7 @@ def user_stats(df, city):
 #    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*80)
 
+
 def display_raw_data(df):
     # Asking the user if he wants to see 5 rows of raw data at a time
     row = 0
@@ -213,6 +222,7 @@ def display_raw_data(df):
             row += 5
         else:
             break
+
 
 def main():
     while True:
